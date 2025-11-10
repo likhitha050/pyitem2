@@ -22,7 +22,8 @@ pipeline{
         sh 'java J1'
       }
     }
-    post{
+  }
+      post{
       success{
         echo 'Build and execution successful...'
       }
@@ -30,5 +31,4 @@ pipeline{
         echo 'Build failed!'
       }
     }
-  }
 }
