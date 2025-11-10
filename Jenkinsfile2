@@ -1,0 +1,25 @@
+pipeline{
+  agent any
+
+  stages{
+    stage('Checkout'){
+      steps{
+        git branch: 'master', url: 'https://github.com/likhitha050/pyitem2'
+      }
+    }
+    stage('compile'){
+      steps{
+        echo 'compilng and executing python file...'
+        sh 'python3 p1.py'
+      }
+    }
+  }
+      post{
+      success{
+        echo 'Build and execution successful...'
+      }
+      failure{
+        echo 'Build failed!'
+      }
+    }
+}
