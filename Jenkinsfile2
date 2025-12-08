@@ -1,6 +1,6 @@
 pipeline{
  triggers {
-        githubPush()
+        pollSCM('3 * * * *')
     }
   agent any
   stages{
